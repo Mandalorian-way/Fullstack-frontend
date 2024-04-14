@@ -19,27 +19,27 @@
 
       <h1>Gallery</h1>
 
-        <div class="container text-center">
-            <div class="row">
+        <div class="container text-center" id="contain">
+            <div class="row" id="row">
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3" id="col1">
                   <div class="thumbnail">
-                    <img src="img/img1.jpg" alt="" class="img-thumbnail" >
+                    <img src="img/img1.jpg" alt="" class="img-thumbnail" id="img1" >
                     <div class="dropdown-badge">
                       <div class="dropdown">
                         <button class="btn dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-ellipsis-v" style="color:white;font-size: 28px;"></i>
                         </button>
                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                            <a class="dropdown-item" onclick="averageColor(document.getElementById('img1'), document.getElementById('col1'))">Check RGB</a>
-                            <a class="dropdown-item" onclick="averageColor(document.getElementById('img1'), document.getElementById('col1'))">Make it Reddish</a>
-                            <a class="dropdown-item" onclick="averageColor(document.getElementById('img1'), document.getElementById('col1'))">Make it Bluish</a>
-                            <a class="dropdown-item" onclick="averageColor(document.getElementById('img1'), document.getElementById('col1'))">Make it Greenish</a>
+                            <a class="dropdown-item" onclick="crgb(document.getElementById('img1'), document.getElementById('col1'))">Check RGB</a>
+                            <a class="dropdown-item" onclick="changeColor(document.getElementById('img1'), 'red')">Make it Reddish</a>
+                            <a class="dropdown-item" onclick="changeColor(document.getElementById('img1'), 'blue')">Make it Bluish</a>
+                            <a class="dropdown-item" onclick="changeColor(document.getElementById('img1'), 'green')">Make it Greenish</a>
                             <a class="dropdown-item" onclick="duplicateImage(document.getElementById('col1'))">Duplicate</a>
-                            <a class="dropdown-item" onclick="duplicateImage(document.getElementById('col1'))">Increase Brightness</a>
-                            <a class="dropdown-item" onclick="duplicateImage(document.getElementById('col1'))">Reduce Resolution</a>
-                            <a class="dropdown-item" onclick="duplicateImage(document.getElementById('col1'))">Create Avatar</a>
-                            <a class="dropdown-item" onclick="duplicateImage(document.getElementById('col1'))">Greyscale</a>
-                            <a class="dropdown-item" onclick="duplicateImage(document.getElementById('col1'))">QR code</a>
+                            <a class="dropdown-item" onclick="increaseBrightness('img1')">Increase Brightness</a>
+                            <a class="dropdown-item" onclick="resolution('img1')">Reduce Resolution</a>
+                            <a class="dropdown-item" onclick="cavatar('img1', 'col1')">Create Avatar</a>
+                            <a class="dropdown-item" onclick="gscale('img1')">Greyscale</a>
+                            <a class="dropdown-item" onclick="">QR code</a>
                             <a class="dropdown-item" href="#">Option 3</a>
                           </div>
                       </div>

@@ -1,15 +1,20 @@
+// Duplicate
 function duplicateImage(id) {
 
-    const originalImage = id;
-    const clonedImage = originalImage.cloneNode(true);
+    const getimage = id;
+    const clonedImage = getimage.cloneNode(true);
 
-    const container = document.getElementById('row');
+    const container = document.getElementById('contain');
     container.appendChild(clonedImage);
 
 }
+// Grayscale
+function gscale(imageElement){
+  document.getElementById(imageElement).style.filter = "grayscale(1)"
+}
 
-
-function averageColor(imageElement, parentElement) {
+// check RGB
+function crgb(imageElement, parentElement) {
 
     // Create the canvas element
     var canvas
@@ -131,21 +136,90 @@ function changeColor(imageElement, toColor) {
     length = imgData.data.length;
 
     for (var i = 0; i < length; i += 4) {
-        imgData.data[i] = 255;
+        if(toColor == 'red'){
+            imgData.data[i] = imgData.data[i+1] + imgData.data[i+2];
+        }
+        else if(toColor == 'green'){
+            imgData.data[i+1] = imgData.data[i] + imgData.data[i+2];
+        }
+        else{
+            imgData.data[i+2] = imgData.data[i] + imgData.data[i+1];
+        }
 
 
     }
 
     context.putImageData(imgData, 0, 0);
+    imageElement.src = canvas.toDataURL();
 }
 
-function showDropdown(){
-    elem = document.getElementById('submenu');
-    elem.style.display = 'block';
-    elem.style.left = '50';
+function showDropdown() {
+
+    const elements = document.querySelectorAll('[id^="submenu-"]');
+
+    elements.forEach(element => {
+
+        element.style.display = 'block';
+        element.style.left = '50px'; //  left   needed
+    });
 }
 
-function hideDropdown(){
-    elem = document.getElementById('submenu');
-    elem.style.display = 'none';
+function hideDropdown() {
+    const elements = document.querySelectorAll('[id^="submenu-"]');
+
+    elements.forEach(element => {
+        element.style.display = 'none';
+    });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('[id^="submenu-"]');
+    elements.forEach(element => {
+        element.addEventListener('mouseenter', showDropdown);
+        element.addEventListener('mouseleave', hideDropdown);
+    });
+});
+
+
+let brightnessLevel = 100;
+
+function increaseBrightness(imgid) {
+    brightnessLevel += 10;
+    if (brightnessLevel > 200) {
+        brightnessLevel = 200;
+    }
+    document.getElementById(imgid).style.filter = `brightness(${brightnessLevel}%)`;
+}
+
+function resolution(imageElement) {
+
+    var img = document.getElementById(imageElement);
+    var canvas = document.createElement('canvas');
+    var context = canvas.getContext('2d');
+    const scaleFactor = 0.9;
+
+    canvas.width = img.width * scaleFactor;
+    canvas.height = img.height * scaleFactor;
+
+    context.drawImage(img, 0, 0, canvas.width, canvas.height);
+    img.crossOrigin = "anonymous";
+    const reducedImageDataURL = canvas.toDataURL('image/jpeg', 0.2);
+    img.src = reducedImageDataURL;
+}
+
+function cavatar(imageElement, myCanvas) {
+    const image = document.getElementById(imageElement);
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext("2d");
+
+    const avatarSize = Math.min(canvas.width, canvas.height);
+
+    context.beginPath();
+    context.arc(avatarSize / 2, avatarSize / 2, avatarSize / 2, 0, 2 * Math.PI);
+    context.clip();
+
+    context.drawImage(image, 0, 0, image.naturalWidth, image.naturalHeight, 0, 0, avatarSize, avatarSize);
+
+    document.getElementById(myCanvas).appendChild(canvas);
+}
+
