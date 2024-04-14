@@ -223,3 +223,7 @@ function cavatar(imageElement, myCanvas) {
     document.getElementById(myCanvas).appendChild(canvas);
 }
 
+function fred(id){
+
+}
+

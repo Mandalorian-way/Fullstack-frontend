@@ -18,6 +18,16 @@
 
 
       <h1>Gallery</h1>
+      <div class="dropdown" >
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Filter
+        </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" onclick="fred('contain')">Reddish images</a></li>
+        <li><a class="dropdown-item" onclick="fgreen('contain')">Greenish images</a></li>
+        <li><a class="dropdown-item" onclick="fblue('contain')">Blueish images</a></li>
+      </ul>
+</div>
 
         <div class="container text-center" id="contain">
             <div class="row" id="row">
@@ -29,7 +39,7 @@
                         <button class="btn dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-ellipsis-v" style="color:white;font-size: 28px;"></i>
                         </button>
-                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
                             <a class="dropdown-item" onclick="crgb(document.getElementById('img1'), document.getElementById('col1'))">Check RGB</a>
                             <a class="dropdown-item" onclick="changeColor(document.getElementById('img1'), 'red')">Make it Reddish</a>
                             <a class="dropdown-item" onclick="changeColor(document.getElementById('img1'), 'blue')">Make it Bluish</a>
@@ -40,25 +50,81 @@
                             <a class="dropdown-item" onclick="cavatar('img1', 'col1')">Create Avatar</a>
                             <a class="dropdown-item" onclick="gscale('img1')">Greyscale</a>
                             <a class="dropdown-item" onclick="">QR code</a>
-                            <a class="dropdown-item" href="#">Option 3</a>
                           </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3" id="col2">
                   <div class="thumbnail">
-                    <img src="img/img2.jpg" alt="" class="img-thumbnail" >
+                    <img src="img/img2.jpg" alt="" class="img-thumbnail" id="img2" >
+                    <div class="dropdown-badge">
+                      <div class="dropdown">
+                        <button class="btn dropdown" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-ellipsis-v" style="color:white;font-size: 28px;"></i>
+                        </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <a class="dropdown-item" onclick="crgb(document.getElementById('img2'), document.getElementById('col1'))">Check RGB</a>
+                            <a class="dropdown-item" onclick="changeColor(document.getElementById('img2'), 'red')">Make it Reddish</a>
+                            <a class="dropdown-item" onclick="changeColor(document.getElementById('img2'), 'blue')">Make it Bluish</a>
+                            <a class="dropdown-item" onclick="changeColor(document.getElementById('img2'), 'green')">Make it Greenish</a>
+                            <a class="dropdown-item" onclick="duplicateImage(document.getElementById('col2'))">Duplicate</a>
+                            <a class="dropdown-item" onclick="increaseBrightness('img2')">Increase Brightness</a>
+                            <a class="dropdown-item" onclick="resolution('img2')">Reduce Resolution</a>
+                            <a class="dropdown-item" onclick="cavatar('img2', 'col2')">Create Avatar</a>
+                            <a class="dropdown-item" onclick="gscale('img2')">Greyscale</a>
+                            <a class="dropdown-item" onclick="">QR code</a>
+                          </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3" id="col3">
                   <div class="thumbnail">
-                    <img src="img/img3.jpg" alt="" class="img-thumbnail" >
+                    <img src="img/img3.jpg" alt="" class="img-thumbnail" id="img3" >
+                    <div class="dropdown-badge">
+                      <div class="dropdown">
+                        <button class="btn dropdown" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-ellipsis-v" style="color:white;font-size: 28px;"></i>
+                        </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenu3">
+                            <a class="dropdown-item" onclick="crgb(document.getElementById('img3'), document.getElementById('col3'))">Check RGB</a>
+                            <a class="dropdown-item" onclick="changeColor(document.getElementById('img3'), 'red')">Make it Reddish</a>
+                            <a class="dropdown-item" onclick="changeColor(document.getElementById('img3'), 'blue')">Make it Bluish</a>
+                            <a class="dropdown-item" onclick="changeColor(document.getElementById('img3'), 'green')">Make it Greenish</a>
+                            <a class="dropdown-item" onclick="duplicateImage(document.getElementById('col3'))">Duplicate</a>
+                            <a class="dropdown-item" onclick="increaseBrightness('img3')">Increase Brightness</a>
+                            <a class="dropdown-item" onclick="resolution('img3')">Reduce Resolution</a>
+                            <a class="dropdown-item" onclick="cavatar('img3', 'col3')">Create Avatar</a>
+                            <a class="dropdown-item" onclick="gscale('img3')">Greyscale</a>
+                            <a class="dropdown-item" onclick="">QR code</a>
+                          </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3" id="col4">
                   <div class="thumbnail">
-                    <img src="img/img4.jpg" alt="" class="img-thumbnail" >
+                    <img src="img/img4.jpg" alt="" class="img-thumbnail" id="img4" >
+                    <div class="dropdown-badge">
+                      <div class="dropdown">
+                        <button class="btn dropdown" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-ellipsis-v" style="color:white;font-size: 28px;"></i>
+                        </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenu4">
+                            <a class="dropdown-item" onclick="crgb(document.getElementById('img4'), document.getElementById('col4'))">Check RGB</a>
+                            <a class="dropdown-item" onclick="changeColor(document.getElementById('img4'), 'red')">Make it Reddish</a>
+                            <a class="dropdown-item" onclick="changeColor(document.getElementById('img4'), 'blue')">Make it Bluish</a>
+                            <a class="dropdown-item" onclick="changeColor(document.getElementById('img4'), 'green')">Make it Greenish</a>
+                            <a class="dropdown-item" onclick="duplicateImage(document.getElementById('col4'))">Duplicate</a>
+                            <a class="dropdown-item" onclick="increaseBrightness('img4')">Increase Brightness</a>
+                            <a class="dropdown-item" onclick="resolution('img4')">Reduce Resolution</a>
+                            <a class="dropdown-item" onclick="cavatar('img4', 'col4')">Create Avatar</a>
+                            <a class="dropdown-item" onclick="gscale('img4')">Greyscale</a>
+                            <a class="dropdown-item" onclick="">QR code</a>
+                          </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
             </div>
