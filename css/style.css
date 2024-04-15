@@ -3,8 +3,8 @@
       overflow: visible;
     }
     .thumbnail img {
-      width: 100%;
-      height: auto;
+      width: 210px;
+      height: 300px;
       transition: transform 0.3s ease;
     }
     .thumbnail:hover img {
